@@ -13,7 +13,7 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Fira Sans Condensed', Arial, sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -50,17 +50,13 @@ ol {
   overflow: auto;
 }
 
-.content__details {
-  width: 100%;
-  height: 100%;
-}
 
 .content__list-item:not(:last-child) {
   margin-bottom: 30px;
 }
 
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: 'Oswald', Arial, sans-serif;
   font-size: 30px;
   font-weight: 700;
   line-height: 100%;
@@ -89,6 +85,7 @@ ol {
 }
 
 .content__card-link {
+  display: block;
   text-decoration: none;
   color: #fff;
 }
@@ -97,20 +94,25 @@ ol {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  width: 100%;
 }
 
 .result__video-container {
   position: relative;
   width: 711px;
+  height: 386px;
   margin-bottom: 16px;
 }
 
 .result__video {
+  object-position: center;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
 .button {
+  font-family: 'Fira Sans Condensed', Arial, sans-serif;
   color: #fff;
   text-align: center;
   font-size: 18px;
@@ -148,7 +150,7 @@ ol {
 .search-form__textfield {
   color: rgba(255, 255, 255, 0.70);
   width: 225px;
-  font-family: Fira Sans Condensed;
+  font-family: 'Fira Sans Condensed', Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: normal;
@@ -185,7 +187,7 @@ ol {
 
 .title {
   color: #FFF;
-  font-family: Oswald;
+  font-family: 'Oswald', Arial, sans-serif;
   font-size: 75px;
   font-style: normal;
   font-weight: 700;
@@ -231,6 +233,10 @@ button:active,
   background-color: #545050;
 }
 
+.content__card-link:checked + .content__video-card::before {
+  background-color: #545050;
+}
+
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::before{
   content: '';
   display: block;
@@ -245,4 +251,8 @@ button:focus-visible,
 .search-form__label:focus-visible {
   outline: 1px solid #fff;
   outline-offset: 1px;
+}
+
+.content__card-link_current {
+  background-color: #545050;
 }
